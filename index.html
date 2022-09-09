@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width , initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <title> Stock Market</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+    <div class="parentContainer">
+        <h2><span class="white">Did your investm<span class="black">ent bull or bear?</span> </h2>
+        <h4>Bought Price</h4>
+        <div class="boughtcost"><input type="number" placeholder="Enter the price when you bought" id="boughtcost"></div>
+        <h4>Quantity</h4>
+        <div class="quantity"><input type="number" placeholder="Quantity" id="quantity"></div>
+        <h4>Current Price</h4>
+        <div class="currentcost"><input type="number" placeholder="Current price" id="currentcost"></div>
+        <div class="check"><button type="submit" onclick="PLgetter()">Find out</button></div>
+        <h2 id="op"></h2>
+    </div>
+        <Script>
+        var boughtcost = document.getElementById("boughtcost");
+        var quantity = document.getElementById("quantity");
+        var currentcost = document.getElementById("currentcost");
+        var op = document.getElementById("op");
+        function PLgetter(){
+            if((boughtcost.value<0) || (quantity.value<0)|| (currentcost.value<0)){
+                op.innerText = `Inavlid inputs`;
+                return
+            }
+            var amountWhenBought = boughtcost.value * quantity.value;
+            var amountNow = currentcost.value * quantity.value;
+            var PL = amountNow - amountWhenBought;
+            var perc = (PL/amountWhenBought)*100;
+            perc = parseFloat(perc).toFixed(2);
+            if(PL<0){
+                op.innerText = `Loss of ${(PL)*(-1)} Rs which is ${perc} %`;
+            }
+            else{op.innerText = `Profit of ${PL} Rs which is ${perc} % !`}
+            if(amountNow<=amountWhenBought/2){
+                op.classList.add("sad");
+            }
+        }
+
+
+        </Script>
+        
+    </body>
+</html>

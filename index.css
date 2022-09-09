@@ -1,0 +1,83 @@
+body{
+    background-color: tomato;
+    background-image: linear-gradient(315deg ,transparent 5%, black,white,rgb(0, 0, 0),tomato);
+
+}
+.parentContainer{
+    text-align: center;
+    margin: 8vh 0px 1vh 0px;
+    height: 90vh;
+
+    /*border: 1px solid black;*/
+   
+}
+h2{
+    font-size: 32px;
+    color: rgb(15, 1, 78);
+}
+.black{
+    color: black;
+}
+.white{
+    color: white;
+}
+h4{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+input{
+    margin: 10px 0px 0px 0px;
+    height: 5vh;
+    width: 20%;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+
+
+}
+button{
+    margin: 50px 0px 0px 0px;
+    height: 5vh;
+    width: 10%;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+
+}
+
+#op{
+    margin: 40px 0px 20px 0px;
+    font-size: 30px;
+    background-color:rgb(211, 163, 31);
+    width: 100vw;
+    position: absolute;
+    left: 0px;
+    word-spacing: 6px;
+
+}
+@keyframes example{
+    0%{
+        background-color: black;
+    }
+    25%{
+        background-color: rgb(211, 163, 31);
+    }
+    50%{
+        background-color: black;
+    }
+    75%{
+        background-color: rgb(211, 163, 31);
+    }
+    100%{
+        background-color: black;
+    }
+}
